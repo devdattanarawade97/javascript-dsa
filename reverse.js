@@ -4,7 +4,7 @@ const reversedString = (word) => {
     
     const reversedArr = Array.from(word).reverse();
 
-    console.log(reversedArr);
+    // console.log(reversedArr);
     
     let x = "";
     x = x + [...reversedArr].join('');

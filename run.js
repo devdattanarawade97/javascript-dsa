@@ -6,6 +6,14 @@ const upperCase = require('./titleCase');
 const reverseString = require('./reverse');
 const checkPalindrome = require('./isPalindrome');
 
+const removeDupli = require('./removeDuplicate');
+const checkProperty = require('./checkObjectProperty');
+const doAlphabeticalOrder = require('./alphabeticalOrder');
+
+const countVowel = require('./countVowels');
+const arrIntersection = require('./arrayIntersection');
+const missingNumber = require('./missingNumber');
+const firstNonRepeatingChar = require('./firstNonRepeatingChar');
 
 let ans = find_sum(1, 2);
 
@@ -33,4 +41,29 @@ ans = reverseString('hello world');
 ans = checkPalindrome('hello world');
 
 ans = checkPalindrome('madam');
+
+
+ans = removeDupli([1, 2, 4, 5, 5]);
+
+ans = checkProperty({
+
+    name: 'abc',
+    sirname: 'cde'
+
+}, 'cd')
+
+
+ans = doAlphabeticalOrder('hello world');
+
+
+ans = countVowel('hello world');
+
+
+ans = arrIntersection([1, 2, 3, 4], [1, 2, 3]);
+
+ans = missingNumber([1, 3, 4, 5, 10]);
+
+
+ans = firstNonRepeatingChar('hheel')
+
 console.log(ans)
