@@ -14,6 +14,8 @@ const countVowel = require('./countVowels');
 const arrIntersection = require('./arrayIntersection');
 const missingNumber = require('./missingNumber');
 const firstNonRepeatingChar = require('./firstNonRepeatingChar');
+const formatedNumber = require('./formatedNumber');
+const randomString = require('./randomString');
 
 let ans = find_sum(1, 2);
 
@@ -66,4 +68,8 @@ ans = missingNumber([1, 3, 4, 5, 10]);
 
 ans = firstNonRepeatingChar('hheel')
 
+
+ans = formatedNumber('14664664');
+
+ans = randomString();
 console.log(ans)
