@@ -16,6 +16,10 @@ const missingNumber = require('./missingNumber');
 const firstNonRepeatingChar = require('./firstNonRepeatingChar');
 const formatedNumber = require('./formatedNumber');
 const randomString = require('./randomString');
+const checkPrime = require('./checkPrime');
+const doubleArr = require('./doubleArr');
+const sumOfSqOfEvenNum = require('./sumOfSqOfEvenNum');
+const recursiveReversedString = require('./recursiveReversedString');
 
 let ans = find_sum(1, 2);
 
@@ -72,4 +76,16 @@ ans = firstNonRepeatingChar('hheel')
 ans = formatedNumber('14664664');
 
 ans = randomString();
+
+ans = checkPrime(5);
+
+ans = doubleArr([1, 3, 4, 6])
+
+
+ans = sumOfSqOfEvenNum([1, 2, 3, 4, 5, 6])
+
+
+ans=recursiveReversedString('hello')
+
+
 console.log(ans)
