@@ -20,9 +20,13 @@ const checkPrime = require('./checkPrime');
 const doubleArr = require('./doubleArr');
 const sumOfSqOfEvenNum = require('./sumOfSqOfEvenNum');
 const recursiveReversedString = require('./recursiveReversedString');
+const prompt = require('prompt-sync')({ sigint: true });
+
 
 let ans = find_sum(1, 2);
 
+let input = String(prompt('enter input'));
+console.log(input);
 
 ans = calculations(4, 2, '+');
 
@@ -85,7 +89,9 @@ ans = doubleArr([1, 3, 4, 6])
 ans = sumOfSqOfEvenNum([1, 2, 3, 4, 5, 6])
 
 
-ans=recursiveReversedString('hello')
+
+
+ans=recursiveReversedString(input)
 
 
 console.log(ans)
