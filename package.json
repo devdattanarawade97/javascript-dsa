@@ -1,5 +1,25 @@
 {
   "dependencies": {
     "prompt-sync": "^4.2.0"
-  }
+  },
+  "name": "javascript_dsa",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devdattanarawade97/javascript-dsa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devdattanarawade97/javascript-dsa/issues"
+  },
+  "homepage": "https://github.com/devdattanarawade97/javascript-dsa#readme",
+  "description": ""
 }

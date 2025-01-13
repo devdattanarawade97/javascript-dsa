@@ -1,6 +1,6 @@
 
 
-const arrIntersection = (arr1, arr2) => {
+export const arrIntersection = (arr1, arr2) => {
 
     let arr = [];
     arr1.forEach((ele) => {
@@ -15,4 +15,4 @@ const arrIntersection = (arr1, arr2) => {
 }
 
 
-module.exports = arrIntersection;
+
