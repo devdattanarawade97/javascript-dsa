@@ -4,6 +4,8 @@
  * @param {number} b - The second number.
  * @returns {number} The sum of a and b.
  */
-export function sum(a, b) {
+function sum(a, b) {
   return a + b;
 }
+
+module.exports = sum;
