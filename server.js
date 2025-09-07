@@ -1,21 +1,23 @@
 const express = require('express');
 const app = express();
-const port = 3000; // You can change this port number
+const port = 3000; // Or whatever port you prefer
 
-// Middleware to parse JSON bodies
+// Import the new blog post routes
+const blogPostsRouter = require('./src/functions/blogPosts');
+
+// Middleware to parse JSON request bodies
 app.use(express.json());
 
-// Basic route for the homepage
+// Existing routes (if any) can go here
+// Example:
 app.get('/', (req, res) => {
-  res.send('Hello from your Express.js backend!');
+    res.send('Welcome to the server!');
 });
 
-// Example of another route
-app.get('/api/data', (req, res) => {
-  res.json({ message: 'This is some data from the API', timestamp: new Date() });
-});
+// Use the blog post routes
+app.use('/api/posts', blogPostsRouter);
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+    console.log(`Server listening at http://localhost:${port}`);
 });
