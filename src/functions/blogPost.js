@@ -1,102 +1,120 @@
+const express = require('express');
 const mongoose = require('mongoose');
 
-// Define the Blog Post Schema
+const router = express.Router();
+
+// Define the BlogPost Schema based on the provided JSON validator
 const blogPostSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: true
   },
   author: {
     type: String,
-    required: true,
+    required: true
   },
   content: {
     type: String,
     required: true,
-    // MaxLength validation as per your provided JSON schema
-    maxlength: [50, 'Content cannot exceed 50 characters.'],
+    maxLength: 50 // As per the provided schema validator
   },
-}, { timestamps: true }); // Automatically adds createdAt and updatedAt fields
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
+  updatedAt: {
+    type: Date,
+    default: Date.now
+  }
+});
 
-// Create the Blog Post model
+// Update the updatedAt field on save
+blogPostSchema.pre('save', function(next) {
+  this.updatedAt = Date.now();
+  next();
+});
+
 const BlogPost = mongoose.model('BlogPost', blogPostSchema);
 
-// Controller functions for CRUD operations
+// --- API Endpoints ---
 
-// Create a new blog post
-const createBlogPost = async (req, res) => {
+// POST: Create a new blog post
+router.post('/', async (req, res) => {
   try {
-    const newPost = new BlogPost(req.body);
-    const savedPost = await newPost.save();
-    res.status(201).json(savedPost);
+    const newBlogPost = new BlogPost(req.body);
+    const savedBlogPost = await newBlogPost.save();
+    res.status(201).json(savedBlogPost);
   } catch (error) {
     if (error.name === 'ValidationError') {
-        return res.status(400).json({ message: error.message });
+      return res.status(400).json({ message: error.message });
     }
     res.status(500).json({ message: error.message });
   }
-};
+});
 
-// Get all blog posts
-const getAllBlogPosts = async (req, res) => {
+// GET: Get all blog posts
+router.get('/', async (req, res) => {
   try {
-    const posts = await BlogPost.find();
-    res.status(200).json(posts);
+    const blogPosts = await BlogPost.find();
+    res.status(200).json(blogPosts);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-};
+});
 
-// Get a single blog post by ID
-const getBlogPostById = async (req, res) => {
+// GET: Get a single blog post by ID
+router.get('/:id', async (req, res) => {
   try {
-    const post = await BlogPost.findById(req.params.id);
-    if (!post) {
+    const blogPost = await BlogPost.findById(req.params.id);
+    if (!blogPost) {
       return res.status(404).json({ message: 'Blog post not found' });
     }
-    res.status(200).json(post);
+    res.status(200).json(blogPost);
   } catch (error) {
+    if (error.name === 'CastError') {
+      return res.status(400).json({ message: 'Invalid Blog Post ID' });
+    }
     res.status(500).json({ message: error.message });
   }
-};
+});
 
-// Update a blog post by ID
-const updateBlogPost = async (req, res) => {
+// PUT: Update a blog post by ID
+router.put('/:id', async (req, res) => {
   try {
-    const updatedPost = await BlogPost.findByIdAndUpdate(
+    const updatedBlogPost = await BlogPost.findByIdAndUpdate(
       req.params.id,
       req.body,
       { new: true, runValidators: true } // Return the updated document and run schema validators
     );
-    if (!updatedPost) {
+    if (!updatedBlogPost) {
       return res.status(404).json({ message: 'Blog post not found' });
     }
-    res.status(200).json(updatedPost);
+    res.status(200).json(updatedBlogPost);
   } catch (error) {
     if (error.name === 'ValidationError') {
-        return res.status(400).json({ message: error.message });
+      return res.status(400).json({ message: error.message });
+    }
+    if (error.name === 'CastError') {
+      return res.status(400).json({ message: 'Invalid Blog Post ID' });
     }
     res.status(500).json({ message: error.message });
   }
-};
+});
 
-// Delete a blog post by ID
-const deleteBlogPost = async (req, res) => {
+// DELETE: Delete a blog post by ID
+router.delete('/:id', async (req, res) => {
   try {
-    const deletedPost = await BlogPost.findByIdAndDelete(req.params.id);
-    if (!deletedPost) {
+    const deletedBlogPost = await BlogPost.findByIdAndDelete(req.params.id);
+    if (!deletedBlogPost) {
       return res.status(404).json({ message: 'Blog post not found' });
     }
     res.status(200).json({ message: 'Blog post deleted successfully' });
   } catch (error) {
+    if (error.name === 'CastError') {
+      return res.status(400).json({ message: 'Invalid Blog Post ID' });
+    }
     res.status(500).json({ message: error.message });
   }
-};
+});
 
-module.exports = {
-  createBlogPost,
-  getAllBlogPosts,
-  getBlogPostById,
-  updateBlogPost,
-  deleteBlogPost,
-};
+module.exports = router;

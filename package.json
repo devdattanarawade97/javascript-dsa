@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/devdattanarawade97/javascript-dsa#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "@playwright/test": "^1.55.0",
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0",
+    "playwright": "^1.55.0"
   }
 }
