@@ -1,33 +1,57 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path'); // Added for general path handling if needed, good practice.
-
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const cors = require('cors'); // Import cors
+const connectDB = require('./src/db/connection');
+const blogPostRoutes = require('./src/routes/blogPostRoutes');
+const userRoutes = require('./src/routes/userRoutes');
+const commentRoutes = require('./src/routes/commentRoutes');
+const { notFound, errorHandler } = require('./src/middleware/errorMiddleware');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Middleware to parse JSON bodies
+// Load environment variables
+dotenv.config({ path: './.env' });
+const port = process.env.PORT || 3000;
+
+// Connect to the database
+connectDB();
+
+// CORS Configuration - Allows requests from your frontend domain
+// You can make this more restrictive in production
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' ? 'https://yourfrontenddomain.com' : '*', // Replace with your actual frontend domain
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Allow cookies to be sent with requests
+  optionsSuccessStatus: 204
+};
+app.use(cors(corsOptions));
+
+// HTTP Request Logger - Only log in development mode for more verbose output
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Import blog post routes
-const blogPostRouter = require('./src/functions/blogPost');
-
-// MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/blogdb', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB connected successfully!'))
-.catch(err => console.error('MongoDB connection error:', err));
-
-// Basic route
 app.get('/', (req, res) => {
   res.send('Welcome to the Blog API!');
 });
 
 // Use blog post routes
-app.use('/api/blogposts', blogPostRouter);
+app.use('/api/posts', blogPostRoutes);
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Use user routes
+app.use('/api/users', userRoutes);
+
+// Use comment routes
+app.use('/api/posts/:blogPostId/comments', commentRoutes);
+app.use('/api/comments', commentRoutes);
+
+// Error Handling Middlewares - MUST be placed after all routes
+app.use(notFound);
+app.use(errorHandler);
+
+app.listen(port, () => {
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`);
 });
