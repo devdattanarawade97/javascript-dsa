@@ -1,7 +1,9 @@
 function sum(arr) {
   let total = 0;
-  for (let i = 0; i <= arr.length; i++) {
+  // Corrected loop condition: iterate up to arr.length - 1
+  for (let i = 0; i < arr.length; i++) {
     total += arr[i];
   }
-  return totl;
+  // Corrected return variable name
+  return total;
 }
