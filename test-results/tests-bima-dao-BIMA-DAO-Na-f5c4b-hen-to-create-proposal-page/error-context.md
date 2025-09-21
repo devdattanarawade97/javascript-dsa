@@ -1,0 +1,284 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "Bima Logo" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img "Bima Logo" [ref=e8] [cursor=pointer]
+        - navigation [ref=e9]:
+          - button "Toggle theme" [ref=e10]:
+            - img
+            - img
+            - generic [ref=e11]: Toggle theme
+          - button "Connect Wallet" [ref=e13] [cursor=pointer]
+    - main [ref=e14]:
+      - generic [ref=e15]:
+        - heading "Governance Proposals" [level=1] [ref=e16]
+        - link "Create New Proposal" [ref=e17] [cursor=pointer]:
+          - /url: /dao/bima.eth/create-proposal
+          - img
+          - text: Create New Proposal
+      - generic [ref=e18]:
+        - heading "Active Proposals (0)" [level=2] [ref=e19]:
+          - img [ref=e20]
+          - text: Active Proposals (0)
+        - generic [ref=e23]:
+          - img [ref=e24]
+          - paragraph [ref=e27]: No active proposals at this time. Check back later or create a new one!
+      - generic [ref=e28]:
+        - heading "Upcoming Proposals (0)" [level=2] [ref=e29]:
+          - img [ref=e30]
+          - text: Upcoming Proposals (0)
+        - generic [ref=e33]:
+          - img [ref=e34]
+          - paragraph [ref=e37]: No upcoming proposals are currently scheduled.
+      - generic [ref=e38]:
+        - heading "Past Proposals (17)" [level=2] [ref=e39]:
+          - img [ref=e40]
+          - text: Past Proposals (17)
+        - generic [ref=e43]:
+          - 'link "test closed test Votes: 0 Ends: 9/11/2025" [ref=e45] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x7d3bcb22e6c9940b817ecdb24405f0e2b4c8655b29c6e4ce93e861b3057205aa
+            - generic [ref=e46] [cursor=pointer]:
+              - generic [ref=e47] [cursor=pointer]:
+                - generic [ref=e48] [cursor=pointer]: test
+                - generic [ref=e49] [cursor=pointer]: closed
+              - generic [ref=e50] [cursor=pointer]: test
+            - generic [ref=e51] [cursor=pointer]:
+              - generic [ref=e53] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e54] [cursor=pointer]: "0"
+              - generic [ref=e56] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e57] [cursor=pointer]: 9/11/2025
+          - 'link "Proposal: Enhanced BimaUI Dashboard for Treasury Management closed Overview Dashboard: Current total treasury balance across all relevant chains/assets. Breakdown of assets (e.g., ETH, USDC, native token, LP tokens). Real-time price feeds for all held assets. Votes: 0 Ends: 9/8/2025" [ref=e59] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x974fd264c4f2c797135fcf304cdf809f7504fd5f5fbe208a052e30eeb052f2f6
+            - generic [ref=e60] [cursor=pointer]:
+              - generic [ref=e61] [cursor=pointer]:
+                - generic [ref=e62] [cursor=pointer]: "Proposal: Enhanced BimaUI Dashboard for Treasury Management"
+                - generic [ref=e63] [cursor=pointer]: closed
+              - generic [ref=e64] [cursor=pointer]: "Overview Dashboard: Current total treasury balance across all relevant chains/assets. Breakdown of assets (e.g., ETH, USDC, native token, LP tokens). Real-time price feeds for all held assets."
+            - generic [ref=e65] [cursor=pointer]:
+              - generic [ref=e67] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e68] [cursor=pointer]: "0"
+              - generic [ref=e70] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e71] [cursor=pointer]: 9/8/2025
+          - 'link "Test demo closed test demo![Screenshot 2025-08-21 at 1.35.50 PM.png](ipfs://bafkreigro7wped6dwfkuh3smumn4afpw4xqlfqz42emxyzwibmravuy7ca) Votes: 0 Ends: 9/3/2025" [ref=e73] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x9b4d64f353cdcee9409cd11f0177d4f0dd15645792cf9903d1e03a7645bb91a9
+            - generic [ref=e74] [cursor=pointer]:
+              - generic [ref=e75] [cursor=pointer]:
+                - generic [ref=e76] [cursor=pointer]: Test demo
+                - generic [ref=e77] [cursor=pointer]: closed
+              - generic [ref=e78] [cursor=pointer]: test demo![Screenshot 2025-08-21 at 1.35.50 PM.png](ipfs://bafkreigro7wped6dwfkuh3smumn4afpw4xqlfqz42emxyzwibmravuy7ca)
+            - generic [ref=e79] [cursor=pointer]:
+              - generic [ref=e81] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e82] [cursor=pointer]: "0"
+              - generic [ref=e84] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e85] [cursor=pointer]: 9/3/2025
+          - 'link "testing localhost closed testing localhost![Screenshot 2025-08-25 at 5.17.13 PM.png](ipfs://bafkreigarbx6j67jqppn2d4fu6bbgfhx4ifr5nb6ehgdsdcy2o2aiv6ow4) Votes: 1 Ends: 9/3/2025" [ref=e87] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0xd95cdabaab847953a1b0135208ee19ffc4dbeed98ac060a04e6ea79d10d7c4c5
+            - generic [ref=e88] [cursor=pointer]:
+              - generic [ref=e89] [cursor=pointer]:
+                - generic [ref=e90] [cursor=pointer]: testing localhost
+                - generic [ref=e91] [cursor=pointer]: closed
+              - generic [ref=e92] [cursor=pointer]: testing localhost![Screenshot 2025-08-25 at 5.17.13 PM.png](ipfs://bafkreigarbx6j67jqppn2d4fu6bbgfhx4ifr5nb6ehgdsdcy2o2aiv6ow4)
+            - generic [ref=e93] [cursor=pointer]:
+              - generic [ref=e95] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e96] [cursor=pointer]: "1"
+              - generic [ref=e98] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e99] [cursor=pointer]: 9/3/2025
+          - 'link "fees if they can provide verifiable proof of utilizing 100% fees if they can provide verifiable proof of utilizing 100% closed fees if they can provide verifiable proof of utilizing 100% renewable energy for their operations. This initiative aims to significantly reduce the overall carbon footprint of our blockchain network, aligning with Bima DAO''s core sustainability mission. We will establish a verification process using third-party auditors. Votes: 1 Ends: 9/2/2025" [ref=e101] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x1ae7f87cddbbba6bf61c650974fbf10a984121634cd410e3da1ff6027c092012
+            - img "fees if they can provide verifiable proof of utilizing 100%" [ref=e103] [cursor=pointer]
+            - generic [ref=e104] [cursor=pointer]:
+              - generic [ref=e105] [cursor=pointer]:
+                - generic [ref=e106] [cursor=pointer]: fees if they can provide verifiable proof of utilizing 100%
+                - generic [ref=e107] [cursor=pointer]: closed
+              - generic [ref=e108] [cursor=pointer]: fees if they can provide verifiable proof of utilizing 100% renewable energy for their operations. This initiative aims to significantly reduce the overall carbon footprint of our blockchain network, aligning with Bima DAO's core sustainability mission. We will establish a verification process using third-party auditors.
+            - generic [ref=e109] [cursor=pointer]:
+              - generic [ref=e111] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e112] [cursor=pointer]: "1"
+              - generic [ref=e114] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e115] [cursor=pointer]: 9/2/2025
+          - 'link "fund carbon fund carbon closed i was getting invalid time dely pls check and fix , as admin have set 5 min voting delay and 10 min voting duration : Votes: 1 Ends: 9/1/2025" [ref=e117] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x648ea12048b1d537cf92697d31ea500af7747cd2ebed4dcbcf04843dd319c184
+            - img "fund carbon" [ref=e119] [cursor=pointer]
+            - generic [ref=e120] [cursor=pointer]:
+              - generic [ref=e121] [cursor=pointer]:
+                - generic [ref=e122] [cursor=pointer]: fund carbon
+                - generic [ref=e123] [cursor=pointer]: closed
+              - generic [ref=e124] [cursor=pointer]: "i was getting invalid time dely pls check and fix , as admin have set 5 min voting delay and 10 min voting duration :"
+            - generic [ref=e125] [cursor=pointer]:
+              - generic [ref=e127] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e128] [cursor=pointer]: "1"
+              - generic [ref=e130] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e131] [cursor=pointer]: 9/1/2025
+          - 'link "carbon functionality closed execution Votes: 1 Ends: 9/1/2025" [ref=e133] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0xd839824f9dd75d5f0fa2c358e5e24d73e6e8606eef710b9bf47c560bbe37e5f0
+            - generic [ref=e134] [cursor=pointer]:
+              - generic [ref=e135] [cursor=pointer]:
+                - generic [ref=e136] [cursor=pointer]: carbon functionality
+                - generic [ref=e137] [cursor=pointer]: closed
+              - generic [ref=e138] [cursor=pointer]: execution
+            - generic [ref=e139] [cursor=pointer]:
+              - generic [ref=e141] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e142] [cursor=pointer]: "1"
+              - generic [ref=e144] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e145] [cursor=pointer]: 9/1/2025
+          - 'link "Building on our commitment to environmental restoration, closed Building on our commitment to environmental restoration, this proposal suggests a partnership with \"Eco-Growth NGO,\" a highly-rated non-profit specializing in large-scale reforestation efforts across Southeast Asia. We propose allocating $75,000 from the DAO treasury to fund the planting of 10,000 trees in critical deforestation zones during the third quarter of this year. Eco-Growth NGO has a proven track record, providing transparent reporting and satellite monitoring of planting sites. Votes: 0 Ends: 9/1/2025" [ref=e147] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0xcc48f48d68b09896b50fa1156c8090f0b4ad81fa81a04f46b4cbfc98b3231dd5
+            - generic [ref=e148] [cursor=pointer]:
+              - generic [ref=e149] [cursor=pointer]:
+                - generic [ref=e150] [cursor=pointer]: Building on our commitment to environmental restoration,
+                - generic [ref=e151] [cursor=pointer]: closed
+              - generic [ref=e152] [cursor=pointer]: Building on our commitment to environmental restoration, this proposal suggests a partnership with "Eco-Growth NGO," a highly-rated non-profit specializing in large-scale reforestation efforts across Southeast Asia. We propose allocating $75,000 from the DAO treasury to fund the planting of 10,000 trees in critical deforestation zones during the third quarter of this year. Eco-Growth NGO has a proven track record, providing transparent reporting and satellite monitoring of planting sites.
+            - generic [ref=e153] [cursor=pointer]:
+              - generic [ref=e155] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e156] [cursor=pointer]: "0"
+              - generic [ref=e158] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e159] [cursor=pointer]: 9/1/2025
+          - 'link "Expansion of Global Reforestation Partnership closed Building on our commitment to environmental restoration, this proposal suggests a partnership with \"Eco-Growth NGO,\" a highly-rated non-profit specializing in large-scale reforestation efforts across Southeast Asia. We propose allocating $75,000 from the DAO treasury to fund the planting of 10,000 trees in critical deforestation zones during the third quarter of this year. Eco-Growth NGO has a proven track record, providing transparent reporting and satellite monitoring of planting sites. Votes: 1 Ends: 9/1/2025" [ref=e161] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x1d3adb487e30d8b2b533ec9a0770d555f19d789c52467858ff9efd62c3f24ce2
+            - generic [ref=e162] [cursor=pointer]:
+              - generic [ref=e163] [cursor=pointer]:
+                - generic [ref=e164] [cursor=pointer]: Expansion of Global Reforestation Partnership
+                - generic [ref=e165] [cursor=pointer]: closed
+              - generic [ref=e166] [cursor=pointer]: Building on our commitment to environmental restoration, this proposal suggests a partnership with "Eco-Growth NGO," a highly-rated non-profit specializing in large-scale reforestation efforts across Southeast Asia. We propose allocating $75,000 from the DAO treasury to fund the planting of 10,000 trees in critical deforestation zones during the third quarter of this year. Eco-Growth NGO has a proven track record, providing transparent reporting and satellite monitoring of planting sites.
+            - generic [ref=e167] [cursor=pointer]:
+              - generic [ref=e169] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e170] [cursor=pointer]: "1"
+              - generic [ref=e172] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e173] [cursor=pointer]: 9/1/2025
+          - 'link "This proposal seeks to incentivize closed This proposal seeks to incentivize validator nodes within the Bima DAO ecosystem to switch to or invest in renewable energy sources. We propose a tiered reward system where validators can receive bonus tokens or reduced protocol fees if they can provide verifiable proof of utilizing 100% renewable energy for their operations. This initiative aims to significantly reduce the overall carbon footprint of our blockchain network, aligning with Bima DAO''s core sustainability mission. We will establish a verification process using third-party auditors. Votes: 0 Ends: 9/1/2025" [ref=e175] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x3070a5c134b9c790b3b5179e3b9cefece453b99fc3247b27ad5862cc9d7204c0
+            - generic [ref=e176] [cursor=pointer]:
+              - generic [ref=e177] [cursor=pointer]:
+                - generic [ref=e178] [cursor=pointer]: This proposal seeks to incentivize
+                - generic [ref=e179] [cursor=pointer]: closed
+              - generic [ref=e180] [cursor=pointer]: This proposal seeks to incentivize validator nodes within the Bima DAO ecosystem to switch to or invest in renewable energy sources. We propose a tiered reward system where validators can receive bonus tokens or reduced protocol fees if they can provide verifiable proof of utilizing 100% renewable energy for their operations. This initiative aims to significantly reduce the overall carbon footprint of our blockchain network, aligning with Bima DAO's core sustainability mission. We will establish a verification process using third-party auditors.
+            - generic [ref=e181] [cursor=pointer]:
+              - generic [ref=e183] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e184] [cursor=pointer]: "0"
+              - generic [ref=e186] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e187] [cursor=pointer]: 9/1/2025
+          - 'link "This proposal seeks to incentivize validator nodes closed This proposal seeks to incentivize validator nodes within the Bima DAO ecosystem to switch to or invest in renewable energy sources. We propose a tiered reward system where validators can receive bonus tokens or reduced protocol fees if they can provide verifiable proof of utilizing 100% renewable energy for their operations. This initiative aims to significantly reduce the overall carbon footprint of our blockchain network, aligning with Bima DAO''s core sustainability mission. We will establish a verification process using third-party auditors. Votes: 0 Ends: 9/1/2025" [ref=e189] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0xd5e8625fb17d0d0258b8a2983bd6cc556404edeee8a2a0b21129d95b62bb5135
+            - generic [ref=e190] [cursor=pointer]:
+              - generic [ref=e191] [cursor=pointer]:
+                - generic [ref=e192] [cursor=pointer]: This proposal seeks to incentivize validator nodes
+                - generic [ref=e193] [cursor=pointer]: closed
+              - generic [ref=e194] [cursor=pointer]: This proposal seeks to incentivize validator nodes within the Bima DAO ecosystem to switch to or invest in renewable energy sources. We propose a tiered reward system where validators can receive bonus tokens or reduced protocol fees if they can provide verifiable proof of utilizing 100% renewable energy for their operations. This initiative aims to significantly reduce the overall carbon footprint of our blockchain network, aligning with Bima DAO's core sustainability mission. We will establish a verification process using third-party auditors.
+            - generic [ref=e195] [cursor=pointer]:
+              - generic [ref=e197] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e198] [cursor=pointer]: "0"
+              - generic [ref=e200] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e201] [cursor=pointer]: 9/1/2025
+          - 'link "Launch Community Grant for Blockchain-Enabled Green Technology closed To foster innovation in sustainable blockchain solutions, this proposal advocates for the establishment of a \"Bima Green Tech Grant Program.\" We propose an initial allocation of $100,000 from the treasury to fund promising community-led projects that leverage blockchain technology for environmental benefits (e.g., carbon credits, waste management, sustainable supply chains). The program will include a transparent application, review, and milestone-based funding disbursement process, overseen by a newly formed community grants committee. Votes: 0 Ends: 9/1/2025" [ref=e203] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0xb467b866c5ad7ba647532007690a3650574de45d8995341d19ae199f87bb4f75
+            - generic [ref=e204] [cursor=pointer]:
+              - generic [ref=e205] [cursor=pointer]:
+                - generic [ref=e206] [cursor=pointer]: Launch Community Grant for Blockchain-Enabled Green Technology
+                - generic [ref=e207] [cursor=pointer]: closed
+              - generic [ref=e208] [cursor=pointer]: To foster innovation in sustainable blockchain solutions, this proposal advocates for the establishment of a "Bima Green Tech Grant Program." We propose an initial allocation of $100,000 from the treasury to fund promising community-led projects that leverage blockchain technology for environmental benefits (e.g., carbon credits, waste management, sustainable supply chains). The program will include a transparent application, review, and milestone-based funding disbursement process, overseen by a newly formed community grants committee.
+            - generic [ref=e209] [cursor=pointer]:
+              - generic [ref=e211] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e212] [cursor=pointer]: "0"
+              - generic [ref=e214] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e215] [cursor=pointer]: 9/1/2025
+          - 'link "Partner with Eco-Growth NGO for Q3 Reforestation Initiative closed Building on our commitment to environmental restoration, this proposal suggests a partnership with \"Eco-Growth NGO,\" a highly-rated non-profit specializing in large-scale reforestation efforts across Southeast Asia. We propose allocating $75,000 from the DAO treasury to fund the planting of 10,000 trees in critical deforestation zones during the third quarter of this year. Eco-Growth NGO has a proven track record, providing transparent reporting and satellite monitoring of planting sites. Votes: 0 Ends: 9/1/2025" [ref=e217] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x334f3dad5e23a31c14a2d10df0e541dcdf0fc043772114db8a13880d8c1768ee
+            - generic [ref=e218] [cursor=pointer]:
+              - generic [ref=e219] [cursor=pointer]:
+                - generic [ref=e220] [cursor=pointer]: Partner with Eco-Growth NGO for Q3 Reforestation Initiative
+                - generic [ref=e221] [cursor=pointer]: closed
+              - generic [ref=e222] [cursor=pointer]: Building on our commitment to environmental restoration, this proposal suggests a partnership with "Eco-Growth NGO," a highly-rated non-profit specializing in large-scale reforestation efforts across Southeast Asia. We propose allocating $75,000 from the DAO treasury to fund the planting of 10,000 trees in critical deforestation zones during the third quarter of this year. Eco-Growth NGO has a proven track record, providing transparent reporting and satellite monitoring of planting sites.
+            - generic [ref=e223] [cursor=pointer]:
+              - generic [ref=e225] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e226] [cursor=pointer]: "0"
+              - generic [ref=e228] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e229] [cursor=pointer]: 9/1/2025
+          - 'link "bima closed hello Votes: 0 Ends: 8/30/2025" [ref=e231] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x869c84568cec0500760a637f5297ef1c6bbad930cf2ce3959f69b536995654a0
+            - generic [ref=e232] [cursor=pointer]:
+              - generic [ref=e233] [cursor=pointer]:
+                - generic [ref=e234] [cursor=pointer]: bima
+                - generic [ref=e235] [cursor=pointer]: closed
+              - generic [ref=e236] [cursor=pointer]: hello
+            - generic [ref=e237] [cursor=pointer]:
+              - generic [ref=e239] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e240] [cursor=pointer]: "0"
+              - generic [ref=e242] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e243] [cursor=pointer]: 8/30/2025
+          - 'link "gh closed hhh Votes: 0 Ends: 8/29/2025" [ref=e245] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0xc3722862c5973c0e689a5d7328d0649b80284701a0083c0e23779650ac878cd6
+            - generic [ref=e246] [cursor=pointer]:
+              - generic [ref=e247] [cursor=pointer]:
+                - generic [ref=e248] [cursor=pointer]: gh
+                - generic [ref=e249] [cursor=pointer]: closed
+              - generic [ref=e250] [cursor=pointer]: hhh
+            - generic [ref=e251] [cursor=pointer]:
+              - generic [ref=e253] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e254] [cursor=pointer]: "0"
+              - generic [ref=e256] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e257] [cursor=pointer]: 8/29/2025
+          - 'link "co2 closed emission Votes: 0 Ends: 8/29/2025" [ref=e259] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x84bb8195c20bc14978827a4d75996ab9e3ffa3967a8e8e67d26b448d613e9ced
+            - generic [ref=e260] [cursor=pointer]:
+              - generic [ref=e261] [cursor=pointer]:
+                - generic [ref=e262] [cursor=pointer]: co2
+                - generic [ref=e263] [cursor=pointer]: closed
+              - generic [ref=e264] [cursor=pointer]: emission
+            - generic [ref=e265] [cursor=pointer]:
+              - generic [ref=e267] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e268] [cursor=pointer]: "0"
+              - generic [ref=e270] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e271] [cursor=pointer]: 8/29/2025
+          - 'link "Testing Voting closed Testing Voting Votes: 1 Ends: 8/21/2025" [ref=e273] [cursor=pointer]':
+            - /url: /dao/bima.eth/proposals/0x2b796e232d68a50d4b00e4bf20776a053a6d9964a1e2e55e8d3ad23426527d9a
+            - generic [ref=e274] [cursor=pointer]:
+              - generic [ref=e275] [cursor=pointer]:
+                - generic [ref=e276] [cursor=pointer]: Testing Voting
+                - generic [ref=e277] [cursor=pointer]: closed
+              - generic [ref=e278] [cursor=pointer]: Testing Voting
+            - generic [ref=e279] [cursor=pointer]:
+              - generic [ref=e281] [cursor=pointer]:
+                - text: "Votes:"
+                - generic [ref=e282] [cursor=pointer]: "1"
+              - generic [ref=e284] [cursor=pointer]:
+                - text: "Ends:"
+                - generic [ref=e285] [cursor=pointer]: 8/21/2025
+  - alert [ref=e286]: Bima Gov
+```
