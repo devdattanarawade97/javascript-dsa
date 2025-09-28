@@ -1,59 +1,71 @@
+// fixed.js - now with fewer common JS mistakes
+
 const usersDB = [
   { id: 1, name: 'Alice', emails: ['alice@example.com'] },
   { id: 2, name: 'Bob' }
 ];
 
 function getUserEmails(userId) {
-  // Use find() for a cleaner and more correct implementation.
-  // It stops when the user is found and returns undefined if not found.
+  // BUG 1 & 2 fixed: Use find() for correct comparison and early exit
   const user = usersDB.find(u => u.id === userId);
-  // Optional chaining (?.) prevents a TypeError if the user or emails property is missing.
-  // Nullish coalescing (|| []) provides a default empty array.
-  return user?.emails || [];
+
+  // BUG 3 fixed: Check if user exists before accessing properties
+  return user ? user.emails || [] : [];
 }
 
 async function fetchData(url) {
-  // Added await to wait for the fetch Promise to resolve.
+  // BUG 4 fixed: Await the fetch call
   const res = await fetch(url);
-  // res.json() already parses the JSON. No need for JSON.parse().
+  // Check if response is OK
+  if (!res.ok) {
+    throw new Error(`HTTP error! status: ${res.status}`);
+  }
+  // BUG 5 fixed: data is already an object after res.json()
   const data = await res.json();
   return data;
 }
 
 function delayedGreet(name) {
-  // Changed const to let to allow reassignment.
-  let greeting = 'Hello ' + name;
+  // BUG 6 Fixed: Changed 'const' to 'let' to allow reassignment, fixing TypeError.
+  // Note on closure: The setTimeout callback captures the value of 'currentGreeting'
+  // at the time it's defined ('Hello ' + name).
+  // The subsequent reassignment to 'Hi ' + name happens immediately and does NOT
+  // affect the value captured by the setTimeout callback.
+  // So, this function will still log 'Hello Charlie' after 1 second.
+  // If the intent was to log 'Hi Charlie', the reassignment would need to occur
+  // BEFORE the setTimeout, or a different logic (e.g., another setTimeout) is needed.
+  let currentGreeting = 'Hello ' + name;
   setTimeout(function() {
-    console.log(greeting); // uses captured `greeting` from the closure.
-                           // This will log the *final* value of `greeting` if it's reassigned before the timeout fires.
+    console.log(currentGreeting);
   }, 1000);
-  greeting = 'Hi ' + name; // Reassign `greeting`
+  currentGreeting = 'Hi ' + name; // This line executes but does not change the greeting logged by setTimeout.
 }
 
 // usage
-console.log(getUserEmails(1)); // Should output ['alice@example.com']
-console.log(getUserEmails(2)); // Should output [] (Bob has no emails property, so user?.emails is undefined, || [] provides default)
-console.log(getUserEmails(3)); // Should output [] (user is undefined, user?.emails is undefined, || [] provides default)
+console.log(getUserEmails(1)); // Alice's email
+console.log(getUserEmails(2)); // Bob's emails (empty array as Bob has no emails property, fixed to return [])
+console.log(getUserEmails(3)); // Empty array for non-existent user
 
-// Example usage of fetchData (assuming a /api/users/1 endpoint exists and returns JSON)
-// For demonstration, let's mock fetch if not running in a browser or Node with fetch polyfill
-if (typeof window === 'undefined' && typeof globalThis.fetch === 'undefined') {
-  globalThis.fetch = async (url) => {
-    console.log(`Mocking fetch for URL: ${url}`);
+// Mock fetch for demonstration if no actual API exists
+// This mock helps in running the fetchData example without a real server.
+globalThis.fetch = async (url) => {
     if (url === '/api/users/1') {
-      return {
-        json: async () => ({ id: 1, name: 'Mock User' }),
-        ok: true,
-        status: 200
-      };
+        return {
+            ok: true,
+            status: 200,
+            json: async () => ({ id: 1, name: 'Alice', email: 'alice@api.com' })
+        };
     }
-    return { json: async () => ({}), ok: false, status: 404 };
-  };
-}
+    return {
+        ok: false,
+        status: 404,
+        json: async () => ({ error: 'Not Found' })
+    };
+};
 
-fetchData('/api/users/1')
-  .then(d => console.log('Fetch Data Success:', d))
-  .catch(e => console.error('Fetch Data Error:', e));
+fetchData('/api/users/1').then(d => console.log('Fetch Data Success:', d)).catch(e => console.error('Fetch Error:', e.message));
+fetchData('/api/nonexistent').then(d => console.log('Fetch Data Success (should fail):', d)).catch(e => console.error('Fetch Error (expected):', e.message));
 
-delayedGreet('Charlie'); // Will log 'Hi Charlie' after 1 second due to closure capturing final `greeting` value
-delayedGreet('David');   // Will log 'Hi David' after 1 second
+delayedGreet('Charlie'); // Will log 'Hello Charlie' after 1 second.
+// The `currentGreeting = 'Hi ' + name;` line will execute, but its effect
+// isn't seen by the previous `setTimeout` due to closure behavior.
