@@ -11,6 +11,7 @@ let blogPosts = [
 router.get('/', (req, res) => {
   res.json(blogPost);
 });
+//thanks
 
 // Get a single blog post by ID
 router.get('/:id', (req, res) => {
