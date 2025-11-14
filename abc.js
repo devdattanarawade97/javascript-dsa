@@ -1,7 +1,5 @@
-function sum(arr) {
-  let total = 0;
-  for (let i = 0; i <= arr.length; i++) {
-    total += arr[i];
-  }
-  return totl;
+const arr = [1,2,3,4];
+for (let i = arr.length - 1; i >= 0; i--) {
+  if (arr[i] === 2) arr.splice(i, 1); // modifies array being iterated
+  console.log(arr[i]); // skipping or undefined behavior for some indices
 }
